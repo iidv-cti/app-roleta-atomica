@@ -1,0 +1,312 @@
+*{
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+html{
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Roboto';
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    user-select: none;
+    background: rgb(19, 14, 114);
+}
+
+.section{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    background: white;
+    overflow: hidden;
+    transition: all 1s;
+    left: 0px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.button {
+    background: rgb(200, 40, 0);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border: 1px solid rgb(190, 40, 0);
+    display: inline-block;
+    min-width: 220px;
+    font-size: 20px;
+    padding: 10px 50px;
+    margin: 10px 20px;
+    transition: all 0.3s;
+}
+
+.button.active{
+    box-shadow: none;
+    border: 1px solid rgb(180, 20, 0);
+    background: rgb(160, 20, 0); 
+}
+
+.button[disabled]{
+    background: rgb(150, 20, 0);
+    transform: scale(0.9);
+}
+
+.button-group{
+    text-align: center;
+}
+
+.logo{
+    /*color: rgb(240, 60, 20);*/
+    color: white;
+    /*text-shadow: 0 0 5px rgb(200, 40, 0);*/
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    text-align: left;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 0 0 20px;
+}
+
+.main{
+    z-index: 60;
+    background: rgb(19, 14, 114);
+    display: block;
+    opacity: 0;
+}
+
+.page{
+    z-index: 20;
+}
+
+.local{
+    z-index: 30;
+}
+
+.header{
+    background: rgb(240, 60, 20);
+    color: white;
+    text-shadow: 0 0 5px rgb(200, 40, 0);
+    font-size: 32px;
+}
+
+.header .menu{
+    display: inline-block;
+    font-size:14px;
+    color: white;
+    padding: 14px 30px 10px 23px;
+    position:  absolute;
+    text-align:  left;
+    left:  0;
+}
+
+.header .title{
+    display: block;
+    font-size:24px;
+    padding: 10px 0;
+    margin: 0 0;
+    color: white;
+    text-align:  center;
+}
+
+.description{
+    color: black;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: justify;
+    padding: 20px;
+}
+
+.description h1{line-height: 45px;}
+
+.description ul{
+    margin: 0px -15px;
+    padding: 0;
+}
+
+.description li{
+    padding: 9px;
+    margin: 5px 0;
+    list-style: none;
+    background: rgb(230, 230, 230);
+    border-left: 1px solid rgb(200, 20, 20);
+}
+
+.description li:nth-child(2n + 1){
+    border-left: 1px solid rgb(220, 20, 20);
+    background: rgb(240, 240, 240);
+}
+
+.roleta{
+    -webkit-transition:  all 2.9s;
+    border-radius: 353px;
+    overflow: hidden;
+    width: 93%;
+    height: 52%;
+    top: 74%;
+    left:  0;
+    padding:  0;
+    transform: rotate(0deg) scale(1.5);
+    box-shadow: -1px  -1px 7px rgba(0,0,0,0.3);
+    position:  absolute;
+}
+
+.option{
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    display: inline-block;
+    left: 19%;
+    margin-top:  -12px;
+    margin-left: -6px;
+}
+
+.background{
+    width: 0;
+    height: 0;
+    border-left: 100px solid;
+    border-right: 100px solid;
+    border-top: 170px solid;
+    border-bottom: 0px solid;
+    border-color: red transparent transparent transparent;
+    position: absolute;
+}
+
+.sp{
+    padding-top: 150px;
+}
+
+.icon_l{
+    position: absolute;
+    text-align: left;
+    float: left;
+    margin-left: -150px;
+}
+
+.text{
+    width: 200px;
+    height: 170px;
+    z-index: 40000;
+    padding: 20px 0 0;
+}
+
+.white{
+    width: 200px;
+    height: 150px;
+}
+
+#jogo .header{ background: transparent; }
+#jogo .header{ text-shadow: -1px -1px 0 rgba(0,0,0,0.3);}
+#jogo{ background: rgb(0,0,20);}
+#jogo #girar { width: auto;padding: 5px 5px 0;}
+#jogo #girar .material-icons{ font-size: 50px!important;margin: 0;}
+#jogo .roleta {text-shadow: -1px -1px 0 rgba(0,0,0,0.3);}
+
+#pergunta .header, #resposta .header{
+    background: transparent;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+}
+
+#pergunta .description, #resposta .description{
+    color: White!important;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+}
+
+#pergunta .button{
+    background: white;
+    color: Black;
+    border: 1px solid white;
+}
+
+#pergunta .button:hover, #pergunta .button:active, #pergunta .button:focus{
+    background: rgb(220, 220, 220);
+    border: 0px solid rgb(230, 230, 230);
+    border-top: 2px solid rgb(220, 220, 220);
+} 
+
+.ipass{
+    font-size: 140px!important;
+    padding: 20px;
+}
+
+.c {
+    text-align: center;
+}
+
+li a{
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(190, 40, 0);
+    text-decoration: none;
+}
+
+.back{
+    position: absolute;
+    z-index: -1;
+}
+
+.main{
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+}
+
+.main .logo{
+    display: inline-block;
+    text-align: center;
+    font-weight: normal;
+}
+
+.main .button{
+    margin: 10px 0;
+}
+
+.back_a {
+    z-index:  -1;
+    position:  absolute;
+    width:  100%;
+}
+
+img.atomob {
+    width:  100px;
+}
+
+img.roletb {
+    position:  absolute;
+    width:  100%;
+    left:  0;
+    top: 0;
+    height: 466%;
+    z-index:  -1;
+}
+
+#rbutton{ margin-bottom: 100px;} 
+
+.about{
+    text-align: left;
+    background: rgb(240, 240, 240);
+    border-top: 1px solid rgb(220, 220, 220);
+    padding: 5px 15px 15px 15px;
+    margin: 15px -20px -20px -20px;
+}
+
+.about a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-left: 30px;
+    display: block;
+}
+
+.about .material-icons{
+    font-size: 28px;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: -30px;
+}

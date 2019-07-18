@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title>Roleta atômica</title>
+        <link rel="stylesheet" href="assets/css/icon.css" />
+        <link rel="stylesheet" href="assets/css/roboto.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/hammer.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/script.js"></script>
+    </head>
+    <body>
+        <div class="sbd">
+        <!--Menu-->
+        <div id="main" class="section main">
+            <div class="back_a">
+                <img src="assets/images/atomo.png" class='atomob' alt="atomob"/>
+                <img src="assets/images/back.png" class='roletb' alt="roletab"/>
+            </div>
+            <div class="container">
+                <div class="logo">
+                    Roleta Atômica
+                </div>     
+                <div class="button-group">
+                    <div class="button" onclick="jogar()">
+                        <div class="material-icons icon_l">local_play</div>
+                        <div class='texts'>Jogar</div>
+                    </div>
+                    <div class="button" onclick="regras()">
+                        <div class="material-icons icon_l">casino</div>
+                        <div class='texts'>Regras</div>
+                    </div>
+                    <div class="button" onclick="creditos()">
+                        <div class="material-icons icon_l">supervisor_account</div>
+                        <div class='texts'>Créditos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Regras-->
+        <div id="regras" class="section page">
+            <div class="header">
+                <div class="menu" onclick="main()">
+                    <div class="material-icons">arrow_back_ios</div>
+                </div>
+                <div class="title">
+                    Regras
+                </div>
+            </div>
+            <div class="description">
+                O Jogo (Roleta Atômica) é constituído por uma roleta, que tem por
+                predominância um assunto bastante envolvente e de fácil compreensão, sendo
+                ele, A evolução dos modelos atômicos da disciplina de Química. Mediante o jogo constitui uma roleta correlacionada com os quatros modelos atômicos selecionados: O modelo atômico de John Dalton que faz analogia com uma bola de bilhar, o de Joseph John Thompson, analogia com um pudim de passas, o de Ernest Rutherford de analogia sistema solar e o de Niels Bohr que ficou conhecido como modelo de Rutherford-Bohr por apenas ter adicionado algumas observações ao modelo de Rutherford.
+                O jogo possui um quantitativo de perguntas referentes a cada modelo atômico correlacionado ao nome do cientista que está na roleta. Como é sabido, todo jogo exige regras, que, predomina a compreensão e a organização do tal. As regras são
+                simples:
+                <ul>
+                    <li>
+                A sala se dividirá, em grupos de 4 (quatro) alunos sendo uma dupla disputando com a outra dupla
+                    </li>
+                <li>Cada grupo escolherá um representante de cada dupla para o mesmo girar a
+                roleta e o outro ficar responsável por fazer as perguntas para a dupla adversária;
+                </li><li>
+                    Os grupos decidem da melhor forma entre si qual a dupla começará a girar a roleta, feito isso, poderão dar início ao jogo.
+                </li><li>Tendo começado o jogo, no qual modelo atômico a roleta parar, o jogo imediatamente irá direcioná-lo (a) para as perguntas referente ao modelo correlacionado como já foi supracitado
+                </li><li>Após a pergunta ser lida pela dupla adversária, a dupla perguntada terá o tempo de 1 (um) minuto para responder
+                </li><li> Cada pergunta que a dupla acertar, ganha 50 pontos;
+                </li><li>Mais destacando que, a cada resposta errada a dupla,
+                terá que pagar uma determinada prendar (ou perderá 10 pontos pontos) ;
+                </li><li>Uma vez que a dupla girar a roleta e parar no nome “Passe a vez” a dupla terá que passar a sua vez para a dupla adversária
+ </li><li>Assim chegando ao fim com as perguntas, regra simples, a dupla
+                com maior pontuação vence.
+                    </li>
+                </ul>
+            </div>
+        
+      </div>
+        <!--Roleta-->
+        <div class="section local" id="jogo">
+            <div class="header">
+                <div class="menu" onclick="main()">
+                    <div class="material-icons">arrow_back_ios</div>
+                </div>
+                <div class="title">
+                    Roleta
+                </div>
+            </div>
+            <div class="button-group sp">
+                <button class="button" id="girar" onclick="girar(3)">
+                    <div class="material-icons">rotate_right</div>
+                </button>
+            </div>
+            <div class="roleta">
+                <div class="option">
+                    <div class="background"></div>
+                    <div class='text'>Rutherford</div>
+                    <div class="white"></div>
+                </div>
+                <div class="option">
+                    <div class="background"></div>
+                    <div class='text'>Dalton</div>
+                    <div class="white"></div>
+                </div>
+                <div class="option">
+                    <div class="background"></div>
+                    <div class='text'>Passo a vez</div>
+                    <div class="white"></div>
+                </div>
+                <div class="option">
+                    <div class="background"></div>
+                    <div class='text'>Bohr</div>
+                    <div class="white"></div>
+                </div>
+                <div class="option">
+                    <div class="background"></div>
+                    <div class='text'>Thomson</div>
+                    <div class="white"></div>
+                </div>
+                <div class="option">
+                    <div class="background"></div>
+                    <div class='text'>Passo a vez</div>
+                    <div class="white"></div>
+                </div>
+            </div>
+        </div>
+        <!--Pergunta-->
+        <div id="pergunta" class="section page">
+            <div class="header">
+                <div class="menu" onclick="jogar()">
+                    <div class="material-icons">arrow_back_ios</div>
+                </div>
+                <div class="title">
+                    Pergunta
+                </div>
+            </div>
+            <div class="description">
+                <h1 class="modelo">Modelo X</h1>
+                <h3 class="valor">#x Pergunta</h3>
+            </div>
+            <div class="button-group">
+                <div class="button" id="rbutton" onclick="resposta()">Ver resposta</div>
+            </div>
+        </div>
+        <!--Pergunta-->
+        <div id="resposta" class="section page">
+            <div class="header">
+                <div class="menu" onclick="jogar()">
+                    <div class="material-icons">arrow_back_ios</div>
+                </div>
+                <div class="title">
+                    Resposta
+                </div>
+            </div>
+            <div class="description">
+                <h1 class="modelo">Modelo X</h1>
+                <h3 class="valor">#x Pergunta</h3>
+                <p class="vresp">#x Resposta</p>
+            </div>
+        </div>
+        <div id="creditos" class="section page">
+            <div class="header">
+                <div class="menu" onclick="main()">
+                    <div class="material-icons">arrow_back_ios</div>
+                </div>
+                <div class="title">
+                    Créditos
+                </div>
+            </div>
+            <div class="description">
+                <p>Os direitos autorais pertencem a Natália Kelly da Silva Oliveira e Gabriel Vanderlei de Oliveira com direito de uso cedido ao IIDV.  
+                   Agradecimentos a Ayrton Matheus da Silva Nascimento,  Kilma da Silva Lima Viana, Francisca Maria Silva Miranda por terem orientado Natália no projeto que deu origem ao aplicativo.</p>
+                <i>Para o desenvolvimento do aplicativo foi utilizado a plataforma Adobe Phonegap Build e a fonte Icon Font da Google.</i>
+                <div class="about">
+                    <p><a href="mailto:nataliakellybs@gmail.com" target="_system"><span class='material-icons'>email</span> nataliakellybs@gmail.com</a></p>
+                    <p><a href="mailto:gabrielvanderlei11@gmail.com" target="_system"><span class='material-icons'>email</span> gabrielvanderlei11@gmail.com</a></p>
+                    <p><a href="http://programadespertandovocacoes.com" target="_system"><span class='material-icons'>link</span>programadespertandovocacoes.com</a></p>
+                    <p><a href="http://institutoidv.org" target="_system"><span class='material-icons'>link</span>institutoidv.org</a></p>
+                 </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
